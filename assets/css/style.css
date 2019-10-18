@@ -1,0 +1,30 @@
+
+body{
+    background: #0f121f;
+    background-image: url('/static/image/star1.jpg');
+    background-repeat: cover;
+    color: rgb(0, 0, 0);
+}
+
+body *{
+    font-family: Ubuntu;
+}
+h1,h2,h3,h4,h5{
+    font-weight: normal;
+    mirgin: 0;
+}
+
+a,a:hover,a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+.card{ 
+    background-color: rgba(245, 245, 245, 0.4); 
+}
+
+.article{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+}

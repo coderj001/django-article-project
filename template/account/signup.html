@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block addcss %}
+{% load static from staticfiles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/article-icon.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-white"> Signup </h1>
+    <div class="border-light mb-3">
+        <form action="/account/signup/" class="site-form" method="post">
+            <div class="form-group text-white-50">
+                <input type='hidden' name='csrfmiddlewaretoken' value='{{ csrf_token }}' />
+                {{ form }}
+                <input type="submit" name="submit" class="btn btn-primary">
+            </div>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block addcss %}
+{% load static from staticfiles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/article-icon.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-white">Create A Article</h1>
+    <form class="text-white" action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">Title: {{ forms.title }}</div>
+        <div class="form-group">Slug: {{ forms.slug }}</div>
+        <div class="form-group">Detail:  {{ forms.body }}</div>
+        <div class="form-group">Insert image: {{ forms.thumb }}</div>
+        <input type="submit" class="btn btn-primary" name='submit'>
+    </form>
+</div>
+
+{% endblock %}

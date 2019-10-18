@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block addcss %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/article-icon.css' %}">
+{% endblock %}
+
+{% block content %}
+      <header class="bg-primary text-white">
+        <div class="container text-center">
+          <h1>{{ article.title }}</h1>
+          <p class="lead">{{ article.date }}</p>
+        </div>
+      </header>
+    {% if article.thumb != 'default.png' %}
+    <div class="container">
+      <img src="{{ article.thumb.url }}" class="img-fluid" alt="Responsive image">
+    </div>
+    {% endif %}
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2 style="color: aliceblue;">Here is the details...</h2>
+              <p style="color: aliceblue;" class="lead">{{ article.body }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}
