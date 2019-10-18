@@ -1,0 +1,3 @@
+
+This is django project
+
